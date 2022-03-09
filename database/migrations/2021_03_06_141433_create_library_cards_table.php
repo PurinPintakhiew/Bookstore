@@ -19,7 +19,6 @@ class CreateLibraryCardsTable extends Migration
             $table->string('ID_Book');
             $table->string('Borrowed_date');
             $table->string('Return_date');
-            $table->integer('Fines');
             $table->timestamps();
         });
     }
