@@ -37,40 +37,37 @@
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
     <h1><b>รายการหนังสือ</b></h1>
-    <div class="w3-section w3-bottombar w3-padding-16">
+    <!-- <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right">Filter:</span> 
       <a href="\admin/home" class="w3-button w3-black">ALL</a>
-      <a href="\addBook" class="w3-button w3-white">ADD</a>
-    </div>
-    </div>
+      <a href="\addBook" class="w3-button w3-white">ADD</a> 
+    </div> -->
+    </div> 
   </header>
  
 <table class="table" >
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">ชื่อเรื่อง</th>
-      <th scope="col">ประเภท</th>
-      <th scope="col">นักเขียน</th>
-      <th scope="col">สำนักพิมพ์</th>
-      <th scope="col">วันที่รับเข้า</th>
-      <th scope="col">รูป</th>
-      <th scope="col">แก้ไข/ลบ</th>
+      <th scope="col">รหัสผู้ยืม</th>
+      <th scope="col">รหัสหนังสือ</th>
+      <th scope="col">วันที่ยืม</th>
+      <th scope="col">กำหนดวันส่งคืน</th>
+      <th scope="col">แก้ไข/ลบ</th>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
     </tr>
   </thead>
     <tbody>
-        @foreach($book as $book)
+        @foreach($library as $library)
       <tr>
-        <th scope="row">{{$book->id}}</th>
-        <td>{{$book->title}}</td>
-        <td>{{$book->category}}</td>
-        <td>{{$book->author}}</td>
-        <td>{{$book->publisher}}</td>
-        <td>{{$book->date}}</td>
-        <td><img src="{{asset('images')}}/{{$book->images}}" style="max-height:50px;"></td>
+        <th scope="row">{{$library->id}}</th>
+        <td>{{$library->cus_name}}</td>
+        <td>{{$library->ID_Book}}</td>
+        <td id="d">{{$library->Borrowed_date}}</td>
+        <td id="rd">{{$library->Return_date}}</td>
+        <!-- <td id="re"></td> -->
         <td>
-            <a href="/edit-book/{{$book->id}}" class="btn btn-info">Edit</a>
-            <a href="/delete-book/{{$book->id}}" class="btn btn-danger">Delete</a>
+            <a href="/print/{{$library->id}}" class="btn btn-info"><i class="fa fa-print" aria-hidden="true"></i></a>
+            <a href="/delete/{{$library->id}}" class="btn btn-danger">Delete</a>
         </td>
       </tr>
         @endforeach
@@ -79,6 +76,9 @@
 
 <script>
 // Script to open and close sidebar
+// var x = document.getElementById("d").value;
+// document.getElementById("re").innerHTML = x;
+
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Book;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = Book::all();
+        return view('home',compact('data',$data));
     }
         /**
      * Show the application dashboard.
@@ -33,6 +35,7 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        return view('adminHome');
+        $book = Book::all();
+        return view('adminHome',compact('book',$book));
     }
 }

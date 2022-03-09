@@ -25,17 +25,17 @@
         <tbody>
         <?php
             $i = 0;
-            foreach($data as $data){
+            foreach($sql as $sql){
                 
         ?>
             <td>
             <div class="card" style="width: 22rem;" >
-                <img class="card-img-top" src="{{asset('images')}}/{{$data->images}}" style="">
+                <img class="card-img-top" src="{{asset('images')}}/{{$sql->images}}" style="">
                 <div class="card-body" >
-                <h4 class="card-title">{{$data->title}}</h4>
-                    <p>ประเภท : {{$data->category}}<p>
-                    <p>นักเขียน : {{$data->author}}<p>
-                    <a href="/select/{{$data->id}}&{{Auth::user()->id}}" class="btn btn-primary" >เลือก</a>
+                <h4 class="card-title">{{$sql->title}}</h4>
+                    <p>ประเภท : {{$sql->category}}<p>
+                    <p>นักเขียน : {{$sql->author}}<p>
+                    <a href="/select/{{$sql->id}}&{{Auth::user()->id}}" class="btn btn-primary" >เลือก</a>
                 </div>
             </div>&nbsp;
             </td>

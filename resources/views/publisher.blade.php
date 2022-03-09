@@ -6,7 +6,7 @@
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <img src="\images/gojo.jpg" style="width:45%;" class="w3-round"><br><br>
+    <img src="\images/user.png" style="width:45%;" class="w3-round"><br><br>
     <h4><b>I am {{ Auth::user()->name }}</b></h4>
   </div>
   <div class="w3-bar-block">
